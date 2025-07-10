@@ -18,7 +18,7 @@
     }
   },
   // Custom Network
-  "network": {
+  "custom/network": {
     "format": "{ifname}",
     "format-wifi": " ",
     "format-ethernet": "  {ifname}",
@@ -30,5 +30,5 @@
     "max-length": 50,
     "on-click": "~/.config/ml4w/settings/networkmanager.sh",
     "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
-  },
+  }
 }

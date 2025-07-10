@@ -1,0 +1,46 @@
+# alle methoden
+- https://www.baeldung.com/linux/control-fan-speed
+- https://www.cyberciti.biz/faq/controlling-dell-fan-speeds-temperature-on-ubuntu-debian-linux/
+- https://wiki.archlinux.org/title/Fan_speed_control#Disable_BIOS_fan_speed_control
+- 
+
+# i8kctl
+dnf copr enable uriesk/i8kutils 
+dnf install i8kutils dell-bios-fan-control
+sudo modprobe -v i8k
+
+i8kctl
+i8kfan 2 2
+
+systemctl start i8kmon.service
+
+sudo journalctl -b | grep -iE "error|fail"
+journalctl -xe
+
+# currently
+# systemctl start i8kmon.service
+sudo dell-bios-fan-control 1
+sudo   i8kctl fan1 2
+
+
+
+https://github.com/vitorafsr/i8kutils
+
+- https://forum.ubuntuusers.de/topic/i8kmon-bei-systemstart-active-failed-dell-opti/
+- https://manpages.debian.org/unstable/i8kutils/i8kmon.1.en.html
+- https://copr.fedorainfracloud.org/coprs/uriesk/i8kutils/
+- https://askubuntu.com/questions/1227489/i8kctl-not-working-for-dell-inspiron-fan-control?rq=1
+- https://bbs.archlinux.org/viewtopic.php?id=201155
+- https://forum.tinycorelinux.net/index.php/topic,10736.0.html
+
+# Fancontrol + pwm
+sudo pwmconfig
+cat /etc/fancontrol 
+
+- https://wiki.archlinux.org/title/Fan_speed_control
+- https://askubuntu.com/questions/63588/how-do-i-get-fan-control-working/398635#398635
+
+# manual
+/sys/class/hwmon/hwmon6/pwm1
+- https://bbs.archlinux.org/viewtopic.php?id=224969
+
